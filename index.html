@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog.Answer.com</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Blog.Answer.com</h1>
+      <div id="session-info"></div>
+    </header>
+
+    <nav class="tabs" id="tabs"></nav>
+
+    <main>
+      <section class="card" data-view="home">
+        <h2>পাবলিক পোস্ট</h2>
+        <p>এখানে সব Published পোস্ট দেখা যাবে, লাইক ও কমেন্ট করা যাবে।</p>
+        <div id="public-posts"></div>
+      </section>
+
+      <section class="card hidden" data-view="auth">
+        <h2>রেজিস্ট্রেশন ও লগইন</h2>
+        <div class="grid2">
+          <form id="register-form" class="panel">
+            <h3>রেজিস্টার</h3>
+            <input required name="name" placeholder="নাম" />
+            <input required name="email" type="email" placeholder="ইমেইল" />
+            <input required name="password" type="password" placeholder="পাসওয়ার্ড" />
+            <button type="submit">অ্যাকাউন্ট তৈরি করুন</button>
+          </form>
+
+          <form id="login-form" class="panel">
+            <h3>লগইন</h3>
+            <input required name="email" type="email" placeholder="ইমেইল" />
+            <input required name="password" type="password" placeholder="পাসওয়ার্ড" />
+            <button type="submit">লগইন</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card hidden" data-view="profile">
+        <h2>প্রোফাইল</h2>
+        <form id="profile-form" class="panel">
+          <input required name="name" placeholder="নাম" />
+          <input name="avatar" placeholder="প্রোফাইল ছবি URL" />
+          <textarea name="bio" rows="3" placeholder="বায়ো"></textarea>
+          <button type="submit">প্রোফাইল আপডেট</button>
+        </form>
+      </section>
+
+      <section class="card hidden" data-view="create-post">
+        <h2>নতুন পোস্ট</h2>
+        <form id="post-form" class="panel">
+          <input type="hidden" name="postId" />
+          <input required name="title" placeholder="পোস্ট শিরোনাম" />
+          <input name="image" placeholder="ইমেজ URL (ঐচ্ছিক)" />
+          <textarea required name="content" rows="5" placeholder="পোস্ট কনটেন্ট"></textarea>
+          <select name="status">
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+          </select>
+          <button type="submit">সেভ পোস্ট</button>
+        </form>
+      </section>
+
+      <section class="card hidden" data-view="my-posts">
+        <h2>আমার পোস্ট</h2>
+        <div id="my-post-list"></div>
+      </section>
+
+      <section class="card hidden" data-view="admin">
+        <h2>অ্যাডমিন প্যানেল</h2>
+        <div class="grid2">
+          <div class="panel">
+            <h3>ইউজার তালিকা</h3>
+            <div id="admin-users"></div>
+          </div>
+          <div class="panel">
+            <h3>পোস্ট মনিটরিং</h3>
+            <div id="admin-posts"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Starter MVP • LocalStorage Demo</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
